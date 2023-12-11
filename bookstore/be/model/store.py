@@ -1,6 +1,7 @@
 import logging
 import os
 import sqlite3 as sqlite
+import threading
 
 
 class Store:
@@ -51,6 +52,8 @@ class Store:
 
 
 database_instance: Store = None
+# global variable for database sync
+init_completed_event = threading.Event()
 
 
 def init_database(db_path):
