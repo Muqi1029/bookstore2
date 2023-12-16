@@ -133,11 +133,11 @@ class Buyer(db_conn.DBConn):
 
             cursor = conn.execute(
                 "UPDATE user set balance = balance + ?" "WHERE user_id = ?",
-                (total_price, seller_id),  # 将原来的buyer_id修改为seller_id
+                (total_price, seller_id),
             )
 
             if cursor.rowcount == 0:
-                return error.error_non_exist_user_id(seller_id)  # 将原来的buyer_id修改为seller_id
+                return error.error_non_exist_user_id(seller_id)
 
             cursor = conn.execute(
                 "DELETE FROM new_order WHERE order_id = ?", (order_id,)
