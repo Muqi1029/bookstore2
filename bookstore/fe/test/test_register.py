@@ -5,6 +5,11 @@ import pytest
 from fe.access import auth
 from fe import conf
 
+"""
+Pytest 使用 yield 关键词将固件分为两部分，yield 之前的代码属于预处理，
+会在测试前执行；yield 之后的代码属于后处理，将在测试完成后执行。
+"""
+
 
 class TestRegister:
     @pytest.fixture(autouse=True)

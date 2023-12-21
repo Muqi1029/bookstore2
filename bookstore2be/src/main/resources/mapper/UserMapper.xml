@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.muqi.bookstore2be.mapper.UserMapper">
+
+    <resultMap id="BaseResultMap" type="com.muqi.bookstore2be.domain.User">
+            <id property="userId" column="user_id" jdbcType="VARCHAR"/>
+            <result property="password" column="password" jdbcType="VARCHAR"/>
+            <result property="balance" column="balance" jdbcType="INTEGER"/>
+            <result property="token" column="token" jdbcType="VARCHAR"/>
+            <result property="terminal" column="terminal" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        user_id,password,balance,
+        token,terminal
+    </sql>
+</mapper>

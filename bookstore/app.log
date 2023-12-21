@@ -1,0 +1,246 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:be.serve:Exception on /auth/register [POST]
+Traceback (most recent call last):
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\view\auth.py", line 35, in register
+    code, message = u.register(user_id=user_id, password=password)
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\model\user.py", line 59, in register
+    token = jwt_encode(user_id, terminal)
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\model\user.py", line 22, in jwt_encode
+    return encoded.decode("utf-8")
+AttributeError: 'str' object has no attribute 'decode'. Did you mean: 'encode'?
+INFO:werkzeug:127.0.0.1 - - [15/Dec/2023 19:07:23] "[35m[1mPOST /auth/register HTTP/1.1[0m" 500 -
+ERROR:be.serve:Exception on /shutdown [GET]
+Traceback (most recent call last):
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\serve.py", line 23, in be_shutdown
+    shutdown_server()
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\serve.py", line 17, in shutdown_server
+    raise RuntimeError("Not running with the Werkzeug Server")
+RuntimeError: Not running with the Werkzeug Server
+INFO:werkzeug:127.0.0.1 - - [15/Dec/2023 19:07:24] "[35m[1mGET /shutdown HTTP/1.1[0m" 500 -
+ERROR:be.serve:Exception on /auth/register [POST]
+Traceback (most recent call last):
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\view\auth.py", line 35, in register
+    code, message = u.register(user_id=user_id, password=password)
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\model\user.py", line 59, in register
+    token = jwt_encode(user_id, terminal)
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\model\user.py", line 22, in jwt_encode
+    return encoded.decode("utf-8")
+AttributeError: 'str' object has no attribute 'decode'. Did you mean: 'encode'?
+INFO:werkzeug:127.0.0.1 - - [15/Dec/2023 19:20:01] "[35m[1mPOST /auth/register HTTP/1.1[0m" 500 -
+ERROR:be.serve:Exception on /auth/register [POST]
+Traceback (most recent call last):
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\view\auth.py", line 35, in register
+    code, message = u.register(user_id=user_id, password=password)
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\model\user.py", line 59, in register
+    token = jwt_encode(user_id, terminal)
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\model\user.py", line 22, in jwt_encode
+    return encoded.decode("utf-8")
+AttributeError: 'str' object has no attribute 'decode'. Did you mean: 'encode'?
+INFO:werkzeug:127.0.0.1 - - [15/Dec/2023 19:20:02] "[35m[1mPOST /auth/register HTTP/1.1[0m" 500 -
+ERROR:be.serve:Exception on /auth/register [POST]
+Traceback (most recent call last):
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\view\auth.py", line 35, in register
+    code, message = u.register(user_id=user_id, password=password)
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\model\user.py", line 59, in register
+    token = jwt_encode(user_id, terminal)
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\model\user.py", line 22, in jwt_encode
+    return encoded.decode("utf-8")
+AttributeError: 'str' object has no attribute 'decode'. Did you mean: 'encode'?
+INFO:werkzeug:127.0.0.1 - - [15/Dec/2023 19:20:02] "[35m[1mPOST /auth/register HTTP/1.1[0m" 500 -
+ERROR:be.serve:Exception on /auth/register [POST]
+Traceback (most recent call last):
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\view\auth.py", line 35, in register
+    code, message = u.register(user_id=user_id, password=password)
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\model\user.py", line 59, in register
+    token = jwt_encode(user_id, terminal)
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\model\user.py", line 22, in jwt_encode
+    return encoded.decode("utf-8")
+AttributeError: 'str' object has no attribute 'decode'. Did you mean: 'encode'?
+INFO:werkzeug:127.0.0.1 - - [15/Dec/2023 19:20:02] "[35m[1mPOST /auth/register HTTP/1.1[0m" 500 -
+ERROR:be.serve:Exception on /shutdown [GET]
+Traceback (most recent call last):
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\serve.py", line 23, in be_shutdown
+    shutdown_server()
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\serve.py", line 17, in shutdown_server
+    raise RuntimeError("Not running with the Werkzeug Server")
+RuntimeError: Not running with the Werkzeug Server
+INFO:werkzeug:127.0.0.1 - - [15/Dec/2023 19:20:02] "[35m[1mGET /shutdown HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:be.serve:Exception on /auth/register [POST]
+Traceback (most recent call last):
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\view\auth.py", line 35, in register
+    code, message = u.register(user_id=user_id, password=password)
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\model\user.py", line 59, in register
+    token = jwt_encode(user_id, terminal)
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\model\user.py", line 22, in jwt_encode
+    return encoded.decode("utf-8")
+AttributeError: 'str' object has no attribute 'decode'. Did you mean: 'encode'?
+INFO:werkzeug:127.0.0.1 - - [15/Dec/2023 19:22:51] "[35m[1mPOST /auth/register HTTP/1.1[0m" 500 -
+ERROR:be.serve:Exception on /shutdown [GET]
+Traceback (most recent call last):
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\serve.py", line 23, in be_shutdown
+    shutdown_server()
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\serve.py", line 17, in shutdown_server
+    raise RuntimeError("Not running with the Werkzeug Server")
+RuntimeError: Not running with the Werkzeug Server
+INFO:werkzeug:127.0.0.1 - - [15/Dec/2023 19:22:51] "[35m[1mGET /shutdown HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [15/Dec/2023 19:53:32] "POST /auth/register HTTP/1.1" 200 -
+ERROR:be.serve:Exception on /shutdown [GET]
+Traceback (most recent call last):
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\serve.py", line 23, in be_shutdown
+    shutdown_server()
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\serve.py", line 17, in shutdown_server
+    raise RuntimeError("Not running with the Werkzeug Server")
+RuntimeError: Not running with the Werkzeug Server
+INFO:werkzeug:127.0.0.1 - - [15/Dec/2023 19:53:32] "[35m[1mGET /shutdown HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [15/Dec/2023 19:54:06] "POST /auth/register HTTP/1.1" 200 -
+ERROR:be.serve:Exception on /shutdown [GET]
+Traceback (most recent call last):
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\serve.py", line 23, in be_shutdown
+    shutdown_server()
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\serve.py", line 17, in shutdown_server
+    raise RuntimeError("Not running with the Werkzeug Server")
+RuntimeError: Not running with the Werkzeug Server
+INFO:werkzeug:127.0.0.1 - - [15/Dec/2023 19:54:06] "[35m[1mGET /shutdown HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [15/Dec/2023 20:00:37] "POST /auth/register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Dec/2023 20:00:37] "POST /auth/register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Dec/2023 20:00:38] "POST /auth/unregister HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Dec/2023 20:00:38] "POST /auth/register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Dec/2023 20:00:38] "[31m[1mPOST /auth/unregister HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [15/Dec/2023 20:00:38] "[31m[1mPOST /auth/unregister HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [15/Dec/2023 20:00:38] "POST /auth/register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Dec/2023 20:00:38] "[35m[1mPOST /auth/register HTTP/1.1[0m" 512 -
+ERROR:be.serve:Exception on /shutdown [GET]
+Traceback (most recent call last):
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\serve.py", line 23, in be_shutdown
+    shutdown_server()
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\serve.py", line 17, in shutdown_server
+    raise RuntimeError("Not running with the Werkzeug Server")
+RuntimeError: Not running with the Werkzeug Server
+INFO:werkzeug:127.0.0.1 - - [15/Dec/2023 20:00:38] "[35m[1mGET /shutdown HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [15/Dec/2023 20:05:52] "POST /auth/register HTTP/1.1" 200 -
+ERROR:be.serve:Exception on /shutdown [GET]
+Traceback (most recent call last):
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\software\anaconda3\envs\bookstore2\lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\serve.py", line 23, in be_shutdown
+    shutdown_server()
+  File "D:\TyporaWorkspace\DataBase\Project_2\bookstore\be\serve.py", line 17, in shutdown_server
+    raise RuntimeError("Not running with the Werkzeug Server")
+RuntimeError: Not running with the Werkzeug Server
+INFO:werkzeug:127.0.0.1 - - [15/Dec/2023 20:05:52] "[35m[1mGET /shutdown HTTP/1.1[0m" 500 -
