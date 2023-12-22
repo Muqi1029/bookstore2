@@ -17,17 +17,14 @@ CREATE TABLE user
 DROP TABLE IF EXISTS store;
 CREATE TABLE store
 (
-    store_id    varchar(100) PRIMARY KEY NOT NULL,
-    book_id     TEXT,
-    book_info   TEXT,
-    stock_level INTEGER,
-    user_id     TEXT COMMENT 'owner'
+    store_id varchar(100) PRIMARY KEY NOT NULL,
+    user_id  TEXT COMMENT 'owner'
 );
 
 DROP TABLE IF EXISTS book;
 CREATE TABLE book
 (
-    id            VARCHAR(256) PRIMARY KEY,
+    id             VARCHAR(256) PRIMARY KEY,
     title          TEXT,
     author         TEXT,
     publisher      TEXT,
@@ -44,4 +41,32 @@ CREATE TABLE book
     content        TEXT,
     tags           TEXT,
     picture        BLOB
-)
+);
+
+DROP TABLE IF EXISTS store_book;
+CREATE TABLE store_book
+(
+    id          INTEGER AUTO_INCREMENT PRIMARY KEY,
+    store_id    TEXT,
+    book_id     TEXT,
+    stock_level INTEGER,
+    price       INTEGER NOT NULL
+);
+
+DROP TABLE IF EXISTS all_order;
+CREATE TABLE all_order(
+    order_id VARCHAR(300) PRIMARY KEY,
+    user_id TEXT,
+    store_id TEXT,
+    status INTEGER DEFAULT 0 COMMENT '0: establish, 1: have paid, 2: ',
+    price INTEGER COMMENT 'the price of the order'
+);
+
+DROP TABLE IF EXISTS order_book;
+CREATE TABLE order_book(
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    order_id TEXT,
+    book_id TEXT,
+    count INTEGER,
+    price INTEGER
+);

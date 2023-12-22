@@ -29,6 +29,7 @@ class GenBook:
         start = 0
         if rows > max_book_count:
             start = random.randint(0, rows - max_book_count)
+
         size = random.randint(1, max_book_count)
         books = book_db.get_book_info(start, size)
         book_id_exist = []

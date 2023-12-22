@@ -129,6 +129,7 @@ class Buyer(db_conn.DBConn):
                 (total_price, buyer_id, total_price),
             )
             if cursor.rowcount == 0:
+                # TODO wrong
                 return error.error_not_sufficient_funds(order_id)
 
             cursor = conn.execute(

@@ -15,6 +15,10 @@ public enum StatusCodeEnum {
     STORE_EXIST(514, "exist store id"),
     STORE_NOT_EXIST(515, "exist store id"),
     BOOK_EXIST(516, "exist book id"),
+    BOOK_NOT_EXIST(517, "not exist book id"),
+    STOCK_LEVEL_LOW(518, "stock level low"),
+    ORDER_NOT_EXIST(519, "not exist order"),
+    NOT_SUFFICIENT_FUNDS(520, "not sufficient fund"),
     BASE_ERROR(530, "base error");
     private final Integer code;
     private final String desc;

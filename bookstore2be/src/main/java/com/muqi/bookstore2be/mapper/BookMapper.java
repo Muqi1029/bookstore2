@@ -1,7 +1,7 @@
 package com.muqi.bookstore2be.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.muqi.bookstore2be.domain.Book;
-import com.baomidou.mybatisplus.mapper.BaseMapper;
 
 /**
 * @author mq

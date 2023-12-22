@@ -5,9 +5,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class Book {
-    private String id;
-    private int Count;
+@AllArgsConstructor
+public class UserChangePwdRequest {
+    private String user_id;
+    private String oldPassword;
+    private String newPassword;
 }

@@ -4,14 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class BuyerNewOrderRequest {
-    private String user_id;
-    private String store_id;
-
-    private List<BookIdRequest> books;
+public class BookIdRequest {
+    private String id;
+    private int Count;
 }

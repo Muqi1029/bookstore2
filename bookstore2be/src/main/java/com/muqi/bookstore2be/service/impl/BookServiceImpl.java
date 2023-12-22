@@ -1,6 +1,6 @@
 package com.muqi.bookstore2be.service.impl;
 
-import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.muqi.bookstore2be.domain.Book;
 import com.muqi.bookstore2be.service.BookService;
 import com.muqi.bookstore2be.mapper.BookMapper;

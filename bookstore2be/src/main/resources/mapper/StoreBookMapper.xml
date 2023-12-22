@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.muqi.bookstore2be.mapper.StoreBookMapper">
+
+    <resultMap id="BaseResultMap" type="com.muqi.bookstore2be.domain.StoreBook">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="storeId" column="store_id" jdbcType="VARCHAR"/>
+        <result property="bookId" column="book_id" jdbcType="VARCHAR"/>
+        <result property="stockLevel" column="stock_level" jdbcType="INTEGER"/>
+        <result property="price" column="price" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,store_id,book_id,
+        stock_level, price
+    </sql>
+</mapper>

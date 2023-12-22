@@ -1,7 +1,7 @@
 package com.muqi.bookstore2be.service;
 
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.muqi.bookstore2be.domain.Book;
-import com.baomidou.mybatisplus.service.IService;
 
 /**
 * @author mq

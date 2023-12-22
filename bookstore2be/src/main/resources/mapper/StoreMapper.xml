@@ -6,14 +6,11 @@
 
     <resultMap id="BaseResultMap" type="com.muqi.bookstore2be.domain.Store">
             <id property="storeId" column="store_id" jdbcType="VARCHAR"/>
-            <result property="bookId" column="book_id" jdbcType="VARCHAR"/>
-            <result property="bookInfo" column="book_info" jdbcType="VARCHAR"/>
-            <result property="stockLevel" column="stock_level" jdbcType="INTEGER"/>
             <result property="userId" column="user_id" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        store_id,book_id,book_info,
-        stock_level,user_id
+        store_id,
+       ,user_id
     </sql>
 </mapper>
