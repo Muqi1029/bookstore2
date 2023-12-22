@@ -1,14 +1,23 @@
 package com.muqi.bookstore2be.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.muqi.bookstore2be.domain.Store;
 import com.muqi.bookstore2be.domain.User;
+import com.muqi.bookstore2be.domain.request.Book;
+import com.muqi.bookstore2be.errorEnum.StatusCodeEnum;
 import com.muqi.bookstore2be.mapper.UserMapper;
+import com.muqi.bookstore2be.service.StoreService;
 import com.muqi.bookstore2be.service.UserService;
 import com.muqi.bookstore2be.utils.TokenUtil;
-import org.apache.el.parser.Token;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
+import java.util.List;
+
+import static com.muqi.bookstore2be.errorEnum.StatusCodeEnum.*;
 
 /**
  * @author mq
@@ -18,6 +27,9 @@ import java.time.Instant;
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         implements UserService {
+
+    @Autowired
+    StoreService storeService;
 
     @Override
     public boolean register(String userId, String password) {
@@ -68,4 +80,80 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         user.setTerminal(terminal);
         return this.saveOrUpdate(user);
     }
+
+    @Override
+    public boolean addFunds(String userId, String password, int addValue) {
+        User user = this.getById(userId);
+        if (user == null || !user.getPassword().equals(password)) {
+            return false;
+        }
+        user.setBalance(user.getBalance() + addValue);
+        return this.updateById(user);
+    }
+
+    @Override
+    public boolean payment(String userId, String password, String orderId) {
+        return false;
+    }
+
+    @Override
+    public StatusCodeEnum createStore(String userId, String storeId) {
+        try {
+            User user = this.getById(userId);
+            if (user == null) {
+                return USER_NOT_EXIST;
+            }
+            Store store = storeService.getById(storeId);
+            if (store != null) {
+                return STORE_EXIST;
+            }
+            Store new_store = new Store();
+            new_store.setUserId(userId);
+            new_store.setStoreId(storeId);
+            if (storeService.save(new_store)) {
+                return OK;
+            }
+            return BASE_ERROR;
+        } catch (Exception e) {
+            return BASE_ERROR;
+        }
+    }
+
+    @Override
+    public StatusCodeEnum newOrder(String userId, String storeId, List<Book> bookList) {
+       for (Book book: bookList) {
+
+       }
+       return null;
+    }
+
+    @Override
+    public StatusCodeEnum addBook(String userId, String storeId, String bookInfo, int stockLevel) {
+        User user = this.getById(userId);
+        if (user == null) {
+            return USER_NOT_EXIST;
+        }
+        Store store = storeService.getById(storeId);
+        if (store == null) {
+            return STORE_NOT_EXIST;
+        }
+        store = storeService.getOne(new QueryWrapper<Store>().eq("store_id", storeId).eq("book_id", book_id));
+        if (store != null) {
+            return BOOK_EXIST;
+        }
+        ObjectMapper objectMapper = new ObjectMapper();
+        Book
+
+        Store update_store = new Store();
+        update_store.setStoreId(storeId);
+        update_store.setUserId(userId);
+        update_store.setBookId(book_id);
+        update_store.setBookInfo(bookInfo);
+        update_store.setStockLevel(stockLevel);
+        if (storeService.save(update_store)) {
+            return OK;
+        }
+        return BASE_ERROR;
+    }
+
 }

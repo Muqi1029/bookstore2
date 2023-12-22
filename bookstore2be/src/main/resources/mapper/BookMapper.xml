@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.muqi.bookstore2be.mapper.BookMapper">
+
+    <resultMap id="BaseResultMap" type="com.muqi.bookstore2be.domain.Book">
+            <id property="id" column="id" jdbcType="VARCHAR"/>
+            <result property="title" column="title" jdbcType="VARCHAR"/>
+            <result property="author" column="author" jdbcType="VARCHAR"/>
+            <result property="publisher" column="publisher" jdbcType="VARCHAR"/>
+            <result property="originalTitle" column="original_title" jdbcType="VARCHAR"/>
+            <result property="translator" column="translator" jdbcType="VARCHAR"/>
+            <result property="pubYear" column="pub_year" jdbcType="VARCHAR"/>
+            <result property="pages" column="pages" jdbcType="INTEGER"/>
+            <result property="price" column="price" jdbcType="INTEGER"/>
+            <result property="currencyUnit" column="currency_unit" jdbcType="VARCHAR"/>
+            <result property="binding" column="binding" jdbcType="VARCHAR"/>
+            <result property="isbn" column="isbn" jdbcType="VARCHAR"/>
+            <result property="authorIntro" column="author_intro" jdbcType="VARCHAR"/>
+            <result property="bookIntro" column="book_intro" jdbcType="VARCHAR"/>
+            <result property="content" column="content" jdbcType="VARCHAR"/>
+            <result property="tags" column="tags" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,title,author,
+        publisher,original_title,translator,
+        pub_year,pages,price,
+        currency_unit,binding,isbn,
+        author_intro,book_intro,content,
+        tags,picture
+    </sql>
+</mapper>

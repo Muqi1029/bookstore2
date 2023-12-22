@@ -2,7 +2,12 @@ package com.muqi.bookstore2be.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.muqi.bookstore2be.domain.User;
+import com.muqi.bookstore2be.domain.request.Book;
+import com.muqi.bookstore2be.domain.request.BuyerPaymentRequest;
+import com.muqi.bookstore2be.errorEnum.StatusCodeEnum;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
 * @author mq
@@ -18,4 +23,22 @@ public interface UserService extends IService<User> {
     String login(String userId, String password, String terminal);
 
     boolean logout(String userId, String token);
+
+    boolean addFunds(String userId, String password, int addValue);
+
+    boolean payment(String userId, String password, String orderId);
+
+    StatusCodeEnum createStore(String userId, String storeId);
+
+    StatusCodeEnum newOrder(String userId, String storeId, List<Book> bookList);
+
+    /**
+     * 卖家增加书籍
+     * @param userId
+     * @param storeId
+     * @param bookInfo
+     * @param stockLevel
+     * @return
+     */
+    StatusCodeEnum addBook(String userId, String storeId, String bookInfo, int stockLevel);
 }
