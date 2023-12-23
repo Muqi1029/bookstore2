@@ -36,6 +36,8 @@ build/
 bookstore/fe/data/book_lx.db
 bookstore/.idea
 
+
 __pycache__
 
 *.db
+
