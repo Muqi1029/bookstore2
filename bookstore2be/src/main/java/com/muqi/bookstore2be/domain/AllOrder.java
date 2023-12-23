@@ -1,12 +1,10 @@
 package com.muqi.bookstore2be.domain;
 
-import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
-import java.time.LocalDateTime;
-
+import java.util.Date;
 import lombok.Data;
 
 /**
@@ -42,7 +40,10 @@ public class AllOrder implements Serializable {
      */
     private Integer price;
 
-    private LocalDateTime createTime;
+    /**
+     * 
+     */
+    private Date createtime;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
@@ -63,7 +64,8 @@ public class AllOrder implements Serializable {
             && (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
             && (this.getStoreId() == null ? other.getStoreId() == null : this.getStoreId().equals(other.getStoreId()))
             && (this.getStatus() == null ? other.getStatus() == null : this.getStatus().equals(other.getStatus()))
-            && (this.getPrice() == null ? other.getPrice() == null : this.getPrice().equals(other.getPrice()));
+            && (this.getPrice() == null ? other.getPrice() == null : this.getPrice().equals(other.getPrice()))
+            && (this.getCreatetime() == null ? other.getCreatetime() == null : this.getCreatetime().equals(other.getCreatetime()));
     }
 
     @Override
@@ -75,6 +77,7 @@ public class AllOrder implements Serializable {
         result = prime * result + ((getStoreId() == null) ? 0 : getStoreId().hashCode());
         result = prime * result + ((getStatus() == null) ? 0 : getStatus().hashCode());
         result = prime * result + ((getPrice() == null) ? 0 : getPrice().hashCode());
+        result = prime * result + ((getCreatetime() == null) ? 0 : getCreatetime().hashCode());
         return result;
     }
 
@@ -89,6 +92,7 @@ public class AllOrder implements Serializable {
         sb.append(", storeId=").append(storeId);
         sb.append(", status=").append(status);
         sb.append(", price=").append(price);
+        sb.append(", createtime=").append(createtime);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 /**
 * @author mq
 * @description 针对表【all_order】的数据库操作Mapper
-* @createDate 2023-12-22 19:42:18
+* @createDate 2023-12-23 22:25:14
 * @Entity com.muqi.bookstore2be.domain.AllOrder
 */
 @Repository

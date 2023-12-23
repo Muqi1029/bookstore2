@@ -10,10 +10,11 @@
             <result property="storeId" column="store_id" jdbcType="VARCHAR"/>
             <result property="status" column="status" jdbcType="INTEGER"/>
             <result property="price" column="price" jdbcType="INTEGER"/>
+            <result property="createtime" column="createTime" jdbcType="TIMESTAMP"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         order_id,user_id,store_id,
-        status,price
+        status,price,createTime
     </sql>
 </mapper>

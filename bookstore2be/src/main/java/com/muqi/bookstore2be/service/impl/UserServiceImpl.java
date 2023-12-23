@@ -155,6 +155,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
             }
             return BASE_ERROR;
         } catch (Exception e) {
+            System.out.println(e);
             return BASE_ERROR;
         }
     }
