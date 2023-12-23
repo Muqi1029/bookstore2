@@ -39,7 +39,7 @@ class Seller:
         return r.status_code
 
     def add_stock_level(
-        self, seller_id: str, store_id: str, book_id: str, add_stock_num: int
+            self, seller_id: str, store_id: str, book_id: str, add_stock_num: int
     ) -> int:
         json = {
             "user_id": seller_id,
@@ -49,6 +49,27 @@ class Seller:
         }
         # print(simplejson.dumps(json))
         url = urljoin(self.url_prefix, "add_stock_level")
+        headers = {"token": self.token}
+        r = requests.post(url, headers=headers, json=json)
+        return r.status_code
+
+    def shipment(self, user_id, order_id):
+        json = {
+            "seller_id": self.seller_id,
+            "buyer_id": user_id,
+            "order_id": order_id
+        }
+        url = urljoin(self.url_prefix, "shipment")
+        headers = {"token": self.token}
+        r = requests.post(url, headers=headers, json=json)
+        return r.status_code
+
+    def cancel_order(self, user_id: str, order_id: str):
+        json = {
+            "seller_id": user_id,
+            "order_id": order_id
+        }
+        url = urljoin(self.url_prefix, "cancel_order")
         headers = {"token": self.token}
         r = requests.post(url, headers=headers, json=json)
         return r.status_code

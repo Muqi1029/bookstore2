@@ -5,6 +5,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.muqi.bookstore2be.domain.Book;
 import com.muqi.bookstore2be.domain.User;
 import com.muqi.bookstore2be.domain.request.BookIdRequest;
+import com.muqi.bookstore2be.domain.response.CheckOrderResponse;
+import com.muqi.bookstore2be.domain.response.SearchResponse;
 import com.muqi.bookstore2be.errorEnum.StatusCodeEnum;
 
 import java.util.List;
@@ -52,4 +54,14 @@ public interface UserService extends IService<User> {
     StatusCodeEnum addStockLevel(String userId, String storeId, String bookId, int addStockLevel);
 
     StatusCodeEnum changePwd(String userId, String oldPassword, String newPassword);
+
+    StatusCodeEnum shipment(String sellerId, String buyerId, String orderId);
+
+    StatusCodeEnum receive(String buyerId, String orderId);
+
+    StatusCodeEnum cancelOrder(String buyerId, String sellerId, String orderId);
+
+    CheckOrderResponse checkOrder(String buyerId);
+
+    SearchResponse search(String keyword, String storeId, int page, int size);
 }

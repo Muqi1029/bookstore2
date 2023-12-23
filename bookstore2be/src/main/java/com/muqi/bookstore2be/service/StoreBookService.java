@@ -6,7 +6,7 @@ import com.muqi.bookstore2be.domain.StoreBook;
 /**
 * @author mq
 * @description 针对表【store_book】的数据库操作Service
-* @createDate 2023-12-22 17:38:20
+* @createDate 2023-12-23 16:27:06
 */
 public interface StoreBookService extends IService<StoreBook> {
 

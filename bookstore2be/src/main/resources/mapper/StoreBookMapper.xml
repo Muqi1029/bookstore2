@@ -5,15 +5,26 @@
 <mapper namespace="com.muqi.bookstore2be.mapper.StoreBookMapper">
 
     <resultMap id="BaseResultMap" type="com.muqi.bookstore2be.domain.StoreBook">
-        <id property="id" column="id" jdbcType="INTEGER"/>
-        <result property="storeId" column="store_id" jdbcType="VARCHAR"/>
-        <result property="bookId" column="book_id" jdbcType="VARCHAR"/>
-        <result property="stockLevel" column="stock_level" jdbcType="INTEGER"/>
-        <result property="price" column="price" jdbcType="INTEGER"/>
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="storeId" column="store_id" jdbcType="VARCHAR"/>
+            <result property="bookId" column="book_id" jdbcType="VARCHAR"/>
+            <result property="stockLevel" column="stock_level" jdbcType="INTEGER"/>
+            <result property="price" column="price" jdbcType="INTEGER"/>
+            <result property="title" column="title" jdbcType="VARCHAR"/>
+            <result property="tags" column="tags" jdbcType="VARCHAR"/>
+            <result property="author" column="author" jdbcType="VARCHAR"/>
+            <result property="publisher" column="publisher" jdbcType="VARCHAR"/>
+            <result property="content" column="content" jdbcType="VARCHAR"/>
+            <result property="bookIntro" column="book_intro" jdbcType="VARCHAR"/>
+            <result property="authorIntro" column="author_intro" jdbcType="VARCHAR"/>
+            <result property="pages" column="pages" jdbcType="INTEGER"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         id,store_id,book_id,
-        stock_level, price
+        stock_level,price,title,
+        tags,author,publisher,
+        content,book_intro,author_intro,
+        pages
     </sql>
 </mapper>

@@ -1,9 +1,9 @@
 package com.muqi.bookstore2be.controller;
 
-import com.muqi.bookstore2be.domain.request.BuyerAddFundsRequest;
-import com.muqi.bookstore2be.domain.request.BuyerNewOrderRequest;
-import com.muqi.bookstore2be.domain.request.BuyerPaymentRequest;
+import com.muqi.bookstore2be.domain.request.*;
+import com.muqi.bookstore2be.domain.response.CheckOrderResponse;
 import com.muqi.bookstore2be.domain.response.NewOrderResponse;
+import com.muqi.bookstore2be.domain.response.SearchResponse;
 import com.muqi.bookstore2be.errorEnum.StatusCodeEnum;
 import com.muqi.bookstore2be.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,4 +54,36 @@ public class BuyerController {
         }
         return ResponseEntity.status(result.getCode()).body(new NewOrderResponse());
     }
+
+    @PostMapping("/receive")
+    public ResponseEntity<String> receive(@RequestBody BuyerReceiveRequest buyerReceiveRequest) {
+        String buyer_id = buyerReceiveRequest.getBuyer_id();
+        String order_id = buyerReceiveRequest.getOrder_id();
+        StatusCodeEnum result = userService.receive(buyer_id, order_id);
+        return ResponseEntity.status(result.getCode()).body(result.getDesc());
+    }
+
+    @PostMapping("/cancel_order")
+    public ResponseEntity<String> cancelOrder(@RequestBody CancelOrderRequest cancelOrderRequest) {
+        StatusCodeEnum result = userService.cancelOrder(cancelOrderRequest.getBuyer_id(), cancelOrderRequest.getSeller_id(), cancelOrderRequest.getOrder_id());
+        return ResponseEntity.status(result.getCode()).body(result.getDesc());
+    }
+
+    @PostMapping("/check_order")
+    public ResponseEntity<CheckOrderResponse> checkOrder(@RequestBody CheckOrderRequest checkOrderRequest) {
+        String buyerId = checkOrderRequest.getBuyer_id();
+        CheckOrderResponse result = userService.checkOrder(buyerId);
+        return ResponseEntity.status(result.getStatusCodeEnum().getCode()).body(result);
+    }
+
+    @PostMapping("/search")
+    public ResponseEntity<SearchResponse> search(@RequestBody BuyerSearchRequest buyerSearchRequest) {
+        String keyword = buyerSearchRequest.getKeyword();
+        String storeId = buyerSearchRequest.getStore_id();
+        int page = buyerSearchRequest.getPage();
+        int size = buyerSearchRequest.getSize();
+        SearchResponse result = userService.search(keyword, storeId, page, size);
+        return ResponseEntity.status(result.getStatusCodeEnum().getCode()).body(result);
+    }
+
 }

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 /**
 * @author mq
 * @description 针对表【store_book】的数据库操作Service实现
-* @createDate 2023-12-22 17:38:20
+* @createDate 2023-12-23 16:27:06
 */
 @Service
 public class StoreBookServiceImpl extends ServiceImpl<StoreBookMapper, StoreBook>

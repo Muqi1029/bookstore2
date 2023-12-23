@@ -21,27 +21,6 @@ CREATE TABLE store
     user_id  TEXT COMMENT 'owner'
 );
 
-DROP TABLE IF EXISTS book;
-CREATE TABLE book
-(
-    id             VARCHAR(256) PRIMARY KEY,
-    title          TEXT,
-    author         TEXT,
-    publisher      TEXT,
-    original_title TEXT,
-    translator     TEXT,
-    pub_year       TEXT,
-    pages          INTEGER,
-    price          INTEGER,
-    currency_unit  TEXT,
-    binding        TEXT,
-    isbn           TEXT,
-    author_intro   TEXT,
-    book_intro     text,
-    content        TEXT,
-    tags           TEXT,
-    picture        BLOB
-);
 
 DROP TABLE IF EXISTS store_book;
 CREATE TABLE store_book
@@ -50,7 +29,15 @@ CREATE TABLE store_book
     store_id    TEXT,
     book_id     TEXT,
     stock_level INTEGER,
-    price       INTEGER NOT NULL
+    price       INTEGER NOT NULL,
+    title   TEXT,
+    tags TEXT,
+    author TEXT,
+    publisher TEXT,
+    content TEXT,
+    book_intro TEXT,
+    author_intro TEXT,
+    pages INTEGER
 );
 
 DROP TABLE IF EXISTS all_order;

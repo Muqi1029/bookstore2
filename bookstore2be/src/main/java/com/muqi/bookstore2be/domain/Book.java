@@ -12,7 +12,6 @@ import lombok.Data;
 
 /**
  * 
- * @TableName book
  */
 @TableName(value ="book")
 @Data

@@ -2,6 +2,9 @@ package com.muqi.bookstore2be.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.muqi.bookstore2be.domain.AllOrder;
+import com.muqi.bookstore2be.errorEnum.StatusCodeEnum;
+
+import java.util.List;
 
 /**
 * @author mq
@@ -9,5 +12,9 @@ import com.muqi.bookstore2be.domain.AllOrder;
 * @createDate 2023-12-22 19:42:18
 */
 public interface AllOrderService extends IService<AllOrder> {
+    List<AllOrder> getUnpaidOrders();
 
+    void cancelOrder(String order_id);
+
+//    StatusCodeEnum cancelOrder(String buyerId, String sellerId, String orderId);
 }

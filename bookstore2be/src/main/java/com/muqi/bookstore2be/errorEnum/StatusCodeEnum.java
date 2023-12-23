@@ -19,7 +19,7 @@ public enum StatusCodeEnum {
     STOCK_LEVEL_LOW(518, "stock level low"),
     ORDER_NOT_EXIST(519, "not exist order"),
     NOT_SUFFICIENT_FUNDS(520, "not sufficient fund"),
-    BASE_ERROR(530, "base error");
+    BASE_ERROR(530, "base error"), ORDER_HAS_PAID(521, "order has paid"), ORDER_HAS_RECEIVED(522, "order has been received"), ORDER_HAS_SENT(523, "order has sent" ), ORDER_NOT_PAID(524, "order not paid" ), DUPLICATE_CANCEL_ORDER(525, "duplicate cancel order"), ORDER_HAS_CANCELED(526, "order has cancelled");
     private final Integer code;
     private final String desc;
 
